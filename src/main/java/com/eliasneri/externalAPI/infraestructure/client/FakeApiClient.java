@@ -1,4 +1,4 @@
-package com.eliasneri.externalAPI.infraestructure;
+package com.eliasneri.externalAPI.infraestructure.client;
 
 import com.eliasneri.externalAPI.apiv1.dto.ProductsDTO;
 import org.springframework.cloud.openfeign.FeignClient;
