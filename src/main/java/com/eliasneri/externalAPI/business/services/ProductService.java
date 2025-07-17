@@ -1,5 +1,6 @@
 package com.eliasneri.externalAPI.business.services;
 
+import com.eliasneri.externalAPI.apiv1.dto.ProductsDTO;
 import com.eliasneri.externalAPI.infraestructure.entities.ProductEntity;
 import com.eliasneri.externalAPI.infraestructure.repositories.ProductRepository;
 import lombok.RequiredArgsConstructor;
@@ -36,6 +37,10 @@ public class ProductService {
 
     public boolean existById(Long id) {
         return repository.existsByIdOrigin(id);
+    }
+
+    public List<ProductEntity> getByLikeName(String title) {
+        return repository.getTitleByIlike(title);
     }
 
 }

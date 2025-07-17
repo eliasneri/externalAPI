@@ -3,6 +3,7 @@ package com.eliasneri.externalAPI.business.services;
 import com.eliasneri.externalAPI.apiv1.dto.ProductsDTO;
 import com.eliasneri.externalAPI.business.converter.ProductConverter;
 import com.eliasneri.externalAPI.infraestructure.client.FakeApiClient;
+import com.eliasneri.externalAPI.infraestructure.entities.ProductEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +28,11 @@ public class FakeApiService {
         );
 
         return converter.toListDTO(service.getAll());
-
     }
+
+    public List<ProductsDTO> getByTitleLike(String title) {
+        return converter.toListDTO(service.getByLikeName(title));
+    }
+
+
 }
