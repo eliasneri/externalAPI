@@ -1,10 +1,11 @@
-package com.eliasneri.externalAPI.business.converter;
+package com.eliasneri.externalAPI.infraestructure.converter;
 
 import com.eliasneri.externalAPI.apiv1.dto.ProductsDTO;
 import com.eliasneri.externalAPI.infraestructure.entities.ProductEntity;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.UUID;
 
 @Component
 public class ProductConverter {
@@ -22,7 +23,7 @@ public class ProductConverter {
 
     public ProductsDTO toDTO(ProductEntity entity) {
         return ProductsDTO.builder()
-                .entityId(entity.getId())
+                .entityId(entity.getId().toString())
                 .id(entity.getIdOrigin())
                 .title(entity.getTitle())
                 .category(entity.getCategory())

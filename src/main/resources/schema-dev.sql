@@ -1,1 +1,1 @@
-CREATE ALIAS IF NOT EXISTS unaccent FOR "com.eliasneri.externalAPI.infraestructure.config.H2Config.unaccent";
+-- CREATE ALIAS IF NOT EXISTS unaccent FOR "com.eliasneri.externalAPI.infraestructure.configs.H2Config.unaccent";
