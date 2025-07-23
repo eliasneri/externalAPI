@@ -1,4 +1,4 @@
-package com.eliasneri.externalAPI.infraestructure.entities;
+package com.eliasneri.externalAPI.domain.entities;
 
 import jakarta.persistence.*;
 import lombok.*;

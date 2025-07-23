@@ -1,6 +1,6 @@
 package com.eliasneri.externalAPI.infraestructure.clients;
 
-import com.eliasneri.externalAPI.apiv1.dto.ProductsDTO;
+import com.eliasneri.externalAPI.domain.dto.ProductsDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 

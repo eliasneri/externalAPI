@@ -1,11 +1,10 @@
-package com.eliasneri.externalAPI.infraestructure.converter;
+package com.eliasneri.externalAPI.application.converter;
 
-import com.eliasneri.externalAPI.apiv1.dto.ProductsDTO;
-import com.eliasneri.externalAPI.infraestructure.entities.ProductEntity;
+import com.eliasneri.externalAPI.domain.dto.ProductsDTO;
+import com.eliasneri.externalAPI.domain.entities.ProductEntity;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.UUID;
 
 @Component
 public class ProductConverter {

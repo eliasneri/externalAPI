@@ -1,9 +1,10 @@
-package com.eliasneri.externalAPI.infraestructure.services;
+package com.eliasneri.externalAPI.application.services;
 
-import com.eliasneri.externalAPI.apiv1.dto.ProductsDTO;
-import com.eliasneri.externalAPI.infraestructure.converter.ProductConverter;
-import com.eliasneri.externalAPI.infraestructure.entities.ProductEntity;
-import com.eliasneri.externalAPI.infraestructure.repositories.ProductRepository;
+import com.eliasneri.externalAPI.domain.dto.ProductsDTO;
+import com.eliasneri.externalAPI.application.converter.ProductConverter;
+import com.eliasneri.externalAPI.domain.entities.ProductEntity;
+import com.eliasneri.externalAPI.domain.repositories.ProductRepository;
+import io.micrometer.core.annotation.Timed;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
@@ -32,6 +33,7 @@ public class ProductService {
     }
 
     @Transactional(readOnly = true)
+    @Timed(value = "product.getall", description = "Número de chamadas ao método getAll e tempo de execução")
     public List<ProductEntity> getAll() {
         try {
             List<ProductEntity> list = repository.findAll();

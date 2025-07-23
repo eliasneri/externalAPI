@@ -1,8 +1,8 @@
 package com.eliasneri.externalAPI.infraestructure.controllers;
 
-import com.eliasneri.externalAPI.apiv1.dto.ProductsDTO;
-import com.eliasneri.externalAPI.infraestructure.services.ExternalApiService;
-import com.eliasneri.externalAPI.infraestructure.services.ProductService;
+import com.eliasneri.externalAPI.domain.dto.ProductsDTO;
+import com.eliasneri.externalAPI.application.services.ExternalApiService;
+import com.eliasneri.externalAPI.application.services.ProductService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
@@ -17,7 +17,7 @@ import java.util.List;
 @RequestMapping("/products")
 @RequiredArgsConstructor
 @Tag(name = "ExternalAPI")
-public class ExternalApiController {
+public class ProductController {
 
     private final ExternalApiService externalService;
     private final ProductService productService;

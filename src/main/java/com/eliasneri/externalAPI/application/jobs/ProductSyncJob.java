@@ -1,9 +1,9 @@
-package com.eliasneri.externalAPI.infraestructure.jobs;
+package com.eliasneri.externalAPI.application.jobs;
 
-import com.eliasneri.externalAPI.apiv1.dto.ProductsDTO;
+import com.eliasneri.externalAPI.domain.dto.ProductsDTO;
 import com.eliasneri.externalAPI.infraestructure.Metrics.ProductSyncMetrics;
 import com.eliasneri.externalAPI.infraestructure.clients.ExternalApiClient;
-import com.eliasneri.externalAPI.infraestructure.services.AsyncProductService;
+import com.eliasneri.externalAPI.application.services.AsyncProductService;
 import io.micrometer.core.instrument.MeterRegistry;
 import net.javacrumbs.shedlock.spring.annotation.SchedulerLock;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -49,7 +49,6 @@ public class ProductSyncJob {
                         metrics.recordSuccessfulSync(duration);
                         meterRegistry.timer("product.sync.job.duration")
                                 .record(duration, TimeUnit.MILLISECONDS);
-                        System.out.println("sync realized");
                     })
                     .exceptionally(ex -> {
                         metrics.recordSyncFailure();

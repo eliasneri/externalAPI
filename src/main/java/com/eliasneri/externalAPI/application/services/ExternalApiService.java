@@ -1,12 +1,10 @@
-package com.eliasneri.externalAPI.infraestructure.services;
+package com.eliasneri.externalAPI.application.services;
 
-import com.eliasneri.externalAPI.apiv1.dto.ProductsDTO;
-import com.eliasneri.externalAPI.infraestructure.converter.ProductConverter;
-import com.eliasneri.externalAPI.infraestructure.clients.ExternalApiClient;
-import com.eliasneri.externalAPI.infraestructure.entities.ProductEntity;
+import com.eliasneri.externalAPI.domain.dto.ProductsDTO;
+import com.eliasneri.externalAPI.application.converter.ProductConverter;
+import io.prometheus.metrics.core.metrics.Counter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -16,6 +14,8 @@ public class ExternalApiService {
 
     private final ProductConverter converter;
     private final ProductService service;
+
+    private final Counter findAllCounter;
 
     public List<ProductsDTO> getAllProducts() {
         List<ProductsDTO> dto = converter.toListDTO(service.getAll());

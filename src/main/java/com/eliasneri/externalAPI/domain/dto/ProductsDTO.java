@@ -1,6 +1,5 @@
-package com.eliasneri.externalAPI.apiv1.dto;
+package com.eliasneri.externalAPI.domain.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import java.math.BigDecimal;
